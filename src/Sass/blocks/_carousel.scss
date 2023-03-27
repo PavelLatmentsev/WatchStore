@@ -7,8 +7,8 @@
         position: relative;
     }
 
-    .slick-prev,
-    .slick-next {
+    .prev,
+    .next {
         border: none;
         background-color: #fff;
         position: absolute;
@@ -22,8 +22,15 @@
         }
     }
 
-    .slick-next {
+    .next {
         left: auto;
         right: -66px;
+    }
+
+    .tns-item {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
