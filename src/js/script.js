@@ -43,3 +43,28 @@ document.querySelector('.prev').addEventListener("click", function () {
 document.querySelector('.next').addEventListener("click", function () {
     slider.goTo("next");
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const menuContent = document.querySelectorAll('.catalog-item__content'),
+        menuList = document.querySelector('.catalog-item__list'),
+        moreInfo = document.querySelectorAll('.catalog-item__link');
+    backInfo = document.querySelectorAll('.catalog-item__back');
+
+    moreInfo.forEach(item => {
+        item.addEventListener('click', () => {
+            event.preventDefault();
+            menuContent.closest("div.catalog-item__content").classList.remove('catalog-item__content_active');
+            menuList.closest("ul.catalog-item__list").classList.add('catalog-item__list_active');
+        });
+    })
+    backInfo.forEach(item => {
+        item.addEventListener('click', () => {
+            event.preventDefault();
+            menuContent.closest("div.catalog-item__content").classList.add('catalog-item__content_active');
+            menuList.closest("ul.catalog-item__list").classList.remove('catalog-item__list_active');
+        });
+    })
+
+})
