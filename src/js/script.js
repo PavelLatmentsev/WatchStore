@@ -49,6 +49,38 @@ $(document).ready(function () {
             $('.overlay, #order').fadeIn('slow');
         });
     });
+
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                email: "required",
+                phone: {
+                    required: true, email: true
+                },
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите имя",
+                    minlength: jQuery.validator.format("Введите {0} символов")
+                },
+                phone: "Пожалуйста, введите телефон",
+                email: {
+                    required: "Пожалуйста, введите почту",
+                    email: " email должен быть по формату"
+                }
+            }
+
+
+        })
+    }
+    validateForms("#consultation-form");
+    validateForms("#order form");
+    validateForms("#consultation form");
+    $("input[name=phone]").mask("+ 7 (999) 999-999-99")
 });
 const slider = tns({
     container: '.carousel__inner',

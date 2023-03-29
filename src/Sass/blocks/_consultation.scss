@@ -11,4 +11,14 @@
         font-family: "Museo Sans Cyrl", sans-serif;
 
     }
+
+    .error {
+        border: 1px solid $main-color
+    }
+
+    label.error {
+        border: none;
+        margin-bottom: 15px;
+        color: #ffffff
+    }
 }
